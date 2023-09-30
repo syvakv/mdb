@@ -1,0 +1,13 @@
+<div class="bg-image">
+  <div class="search-wrapper">
+    <input type="text" #search placeholder="Search movies" />
+    <div class="suggestions">
+      <p
+        (click)="onSelect(suggestion)"
+        *ngFor="let suggestion of suggestions | slice : 0 : 5"
+      >
+        {{ suggestion.original_title }}
+      </p>
+    </div>
+  </div>
+</div>

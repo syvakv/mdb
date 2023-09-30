@@ -1,0 +1,42 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+
+body,
+html {
+  font-family: Ubuntu;
+  font-size: 16px;
+  font-weight: 400;
+  background-color: black;
+  height: 100%;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+p {
+  margin: 0;
+}
+
+.container {
+  max-width: 100%;
+  margin: 40px auto;
+  @mixin for-tablet-portrait-up {
+    max-width: 90%;
+  }
+  @mixin for-tablet-landscape-up {
+    max-width: 70%;
+  }
+}
+.subheading {
+  padding: 11px 0px 5px 35px;
+  height: 40px;
+  font-size: 18px;
+  font-weight: 700;
+  background-image: url("./assets/flame.png");
+  background-repeat: no-repeat;
+  background-size: 25px;
+  background-position: 5px 8px;
+  color: white;
+}

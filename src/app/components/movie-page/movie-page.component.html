@@ -1,0 +1,93 @@
+<ng-container *ngIf="movie">
+  <div
+    class="details"
+    [ngStyle]="{
+      'background-position': 'left calc((50vw - 170px) - 340px) top',
+      'background-size': 'cover',
+      'background-repeat': 'no-repeat',
+      'background-image':
+        ' url(' +
+        'https://image.tmdb.org/t/p/original' +
+        movie.poster_path +
+        ')'
+    }"
+  >
+    <div class="movie_headers">
+      <div class="movie_wraper__poster">
+        <div class="poster">
+          <div class="image_content">
+            <img
+              class="movie__img"
+              [src]="'https://image.tmdb.org/t/p/original' + movie.poster_path"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="movie_headers_poster_wraper">
+        <section class="movie_headers_poster">
+          <div class="title_header">
+            <h2 class="12">
+              {{ movie.title }}
+              <span class="release_date">
+                ( {{ movie.release_date.substr(0, 4) }} )</span
+              >
+            </h2>
+
+            <div class="facts">
+              <span class="release"> {{ movie.release_date }} |</span>
+              <span class="genres" *ngFor="let genre of movie.genres">
+                {{ genre.name }}
+              </span>
+            </div>
+
+            <div class="ranks">
+              <span class="vote_count_text">Vote Count :</span>
+              <span class="vote_count"> {{ movie.vote_count }} </span>
+            </div>
+            <div class="ranks">
+              <span class="vote_average_text"> Average Rating :</span>
+              <span class="vote_average">
+                {{ movie.vote_average.toString().substr(0, 3) }}</span
+              >
+            </div>
+
+            <div class="header_info">
+              <h3>Overview</h3>
+              <div class="overview">
+                <p>
+                  {{ movie.overview }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<div class="Billed_cast">
+  <div class="subheading" id="clsubheading">Recomendation movies</div>
+  <div class="movie-list">
+    <ng-container *ngFor="let rec of movies | slice : 0 : 6">
+      <div class="movie-list__item">
+        <img src="https://image.tmdb.org/t/p/original/{{ rec.poster_path }}" />
+        <div>
+          <div class="movie-details">
+            <p class="movies-title">
+              {{
+                rec.original_title.length <= 11
+                  ? rec.original_title
+                  : rec.original_title.substr(0, 20) + "..."
+              }}
+            </p>
+
+            <br />
+            <p class="movies-title">{{ rec.genre_ids }}</p>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>

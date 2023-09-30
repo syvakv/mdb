@@ -1,0 +1,205 @@
+/*.details {
+  height: 600px;
+}
+*/
+.Billed_cast {
+  background-color: white;
+}
+
+@import "../../../assets/scss/modules/config";
+
+.movie-list {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  background-color: #191919;
+  @include for-tablet-portrait-up {
+    padding: 0;
+  }
+  &__item {
+    margin: 10px;
+    text-align: center;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    box-shadow: rgba(251, 249, 249, 0.557) 0px 5px 15px;
+    @include for-tablet-portrait-up {
+      flex: 0 33%;
+      margin: 5px 5px;
+    }
+    @include for-desktop-up {
+      flex: 15%;
+    }
+    img {
+      width: 250px;
+
+      @include for-tablet-portrait-up {
+        width: 100%;
+      }
+    }
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.movie-details {
+  padding: 5px;
+  height: 70px;
+  float: left;
+}
+.movies-title {
+  color: white;
+  float: left;
+  font-size: 18px;
+  margin-left: 15px;
+}
+.movies-voite {
+  font-size: 16px;
+  margin-left: 15px;
+  color: white;
+  width: 30px;
+  background-color: rgb(41, 44, 73);
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.movie_headers {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  padding: 85px;
+  height: 100%;
+  margin: 0 auto;
+
+  background-image: linear-gradient(
+    to right,
+    rgba(31.5, 31.5, 31.5, 1) calc((50vw - 170px) - 340px),
+    rgba(31.5, 31.5, 31.5, 0.84) 50%,
+    rgba(31.5, 31.5, 31.5, 0.84) 100%
+  );
+}
+
+.movie_wraper__poster {
+  margin-left: 15%;
+  border-width: 0;
+  min-width: 300px;
+  width: 300px;
+  height: 450px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: rgba(251, 249, 249, 0.557) 2px 2px 4px 2px;
+}
+.poster {
+  display: block;
+  min-width: 300px;
+  width: 300px;
+  height: 450px;
+  position: relative;
+}
+.movie__img {
+  display: block;
+  min-width: 300px;
+  width: 300px;
+  height: 450px;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.movie_headers_poster_wraper {
+  display: flex;
+}
+
+.movie_headers_poster {
+  display: flex;
+  align-items: flex-start;
+  align-content: center;
+  box-sizing: border-box;
+  padding-left: 40px;
+}
+.title_header {
+  width: 100%;
+  margin-bottom: 24px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+section div.title_header h2 {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 2.2rem;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 2.2rem;
+  color: white;
+}
+
+span.release_date {
+  opacity: 0.8;
+  font-weight: 400;
+  color: white;
+}
+
+.facts,
+.ranks {
+  display: flex;
+  width: 100%;
+}
+.release,
+.genres {
+  margin-top: 10px;
+  font-size: 1.1em;
+  line-height: 1;
+  opacity: 0.6;
+  color: white;
+}
+.genres {
+  margin-left: 5px;
+}
+.overview {
+  color: white;
+  font-size: 1em;
+  font-family: "Source Sans Pro", Arial, sans-serif;
+  font-weight: 300;
+}
+.header_info {
+  margin-top: 35px;
+  color: white;
+}
+
+.header_info h3 {
+  font-weight: 600;
+  font-family: "Source Sans Pro", Arial, sans-serif;
+  font-size: 1.3em;
+}
+
+.vote_average_text,
+.vote_average,
+.vote_count_text,
+.vote_count {
+  margin-top: 10px;
+  font-size: 1.1em;
+  line-height: 1;
+  opacity: 0.8;
+  color: white;
+}
+.vote_average {
+  margin-left: 5px;
+  color: white;
+  width: auto;
+  opacity: 1;
+  background-color: #e50914;
+  border: 1px solid #191919;
+  border-radius: 5px;
+}
+.vote_count {
+  color: white;
+  opacity: 1;
+}
+
+#clsubheading {
+  color: black;
+}

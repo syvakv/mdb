@@ -1,0 +1,51 @@
+<section class="movies-section">
+  <div class="container">
+    <div class="subheading">Popular movies</div>
+    <div class="movie-list">
+      <ng-container
+        *ngFor="
+          let movie of movies
+            | paginate
+              : {
+                  itemsPerPage: tableSize,
+                  currentPage: page,
+                  totalItems: count
+                };
+          let i = index
+        "
+      >
+        <div class="movie-list__item">
+          <img
+            src="https://image.tmdb.org/t/p/original/{{ movie.poster_path }}"
+            class="rowimg largeposter"
+            alt="..."
+            [routerLink]="['/movie', movie.id]"
+          />
+          <div>
+            <div class="movie-details">
+              <p class="movies-title">
+                {{
+                  movie.original_title.length <= 11
+                    ? movie.original_title
+                    : movie.original_title.substr(0, 15) + "..."
+                }}
+              </p>
+              <br />
+              <p class="movies-voite">{{ movie.vote_average }}</p>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</section>
+
+<div class="d-flex justify-content-center">
+  <pagination-controls
+    class="pagination-controls"
+    previousLabel="Prev"
+    nextLabel="Next"
+    (pageChange)="onTableDataChange($event)"
+  >
+  </pagination-controls>
+</div>
